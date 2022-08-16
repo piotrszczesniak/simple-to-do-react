@@ -38,7 +38,6 @@ function App() {
       });
 
       setTaskList([...updatedTaskList]);
-
       setEditing(null);
       setTaskName('');
     }
@@ -51,20 +50,6 @@ function App() {
   const deleteTask = (id, e) => {
     e.stopPropagation();
     setTaskList(taskList.filter((task) => task.id !== id));
-  };
-
-  const updateTask = (id) => {
-    const updatedTaskList = taskList.map((task) => {
-      let updatedTask = { ...task };
-
-      if (task.id === id) {
-        updatedTask.name = 'New task name';
-      }
-
-      return updatedTask;
-    });
-
-    console.log(updatedTaskList);
   };
 
   const editTask = (id, e) => {
@@ -80,23 +65,16 @@ function App() {
 
       return singleTask;
     });
-    updateTask(id);
   };
-
-  // const logTasks = () => {
-  //   console.log(taskList);
-  // };
 
   return (
     <div className='App'>
-      <h1>simple todo list</h1>
-      {/*  */}
+      <h1>todo list</h1>
+
       <form onSubmit={handleFormSubmit}>
         <input type='text' value={taskName} onChange={(e) => setTaskName(e.target.value)} placeholder='Enter task name' />
         <button type='submit'>{editing ? 'Update task' : 'Add task'}</button>
       </form>
-
-      {/* <button onClick={logTasks}>Log tasks in console</button> */}
 
       {taskList.map(({ name, id, done }, index) => (
         <Task name={name} id={id} done={done} onDelete={deleteTask} onEdit={editTask} onToggle={toggleDone} key={index} />
