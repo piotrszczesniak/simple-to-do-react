@@ -17,17 +17,6 @@
   justify-content: center;
 }
 
-/* .task-item:hover::after {
-  content: 'click to mark task done';
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 0.75rem;
-  padding: 0.25rem;
-  background-color: aliceblue;
-  border-radius: 0.25rem;
-} */
-
 .task-name {
   flex: 5 0 auto;
 }

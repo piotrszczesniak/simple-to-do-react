@@ -89,7 +89,7 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Simple todo list</h1>
+      <h1>simple todo list</h1>
       {/*  */}
       <form onSubmit={handleFormSubmit}>
         <input type='text' value={taskName} onChange={(e) => setTaskName(e.target.value)} placeholder='Enter task name' />
