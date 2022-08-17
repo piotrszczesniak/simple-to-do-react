@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { InputForm } from './Components/InputForm';
 import { Tasks } from './Components/Tasks';
 import { TaskContext } from './Contexts/TaskContext';
 
@@ -74,26 +75,18 @@ function App() {
         toggleDone,
         deleteTask,
         editTask,
+        handleFormSubmit,
+        taskList,
         taskName,
         setTaskName,
-        taskList,
-        setTaskList,
         editing,
-        setEditing,
       }}
     >
       <div className='App'>
         <h1>todo list</h1>
+        <InputForm />
 
-        <form onSubmit={handleFormSubmit}>
-          <input type='text' value={taskName} onChange={(e) => setTaskName(e.target.value)} placeholder='Enter task name' />
-          <button type='submit'>{editing ? 'Update task' : 'Add task'}</button>
-        </form>
         <Tasks />
-
-        {/* {taskList.map(({ name, id, done }, index) => (
-          <Task name={name} id={id} done={done} onDelete={deleteTask} onEdit={editTask} onToggle={toggleDone} key={index} />
-        ))} */}
       </div>
     </TaskContext.Provider>
   );
