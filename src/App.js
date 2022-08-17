@@ -12,7 +12,7 @@ function App() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (taskName.length === 0) {
+    if (taskName?.length === 0) {
       return;
     }
 
