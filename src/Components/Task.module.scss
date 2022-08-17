@@ -1,0 +1,38 @@
+.task-item {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-weight: 400;
+  margin: 16px auto 0;
+  padding: 8px;
+  background-color: #f1efdc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 2px 0px rgba(66, 68, 90, 1);
+  cursor: pointer;
+
+  &.done {
+    background-color: rgba(241, 239, 220, 0.5);
+    box-shadow: none;
+    font-weight: 300;
+    color: grey;
+    text-decoration: line-through;
+    font-style: italic;
+  }
+}
+
+.task-name {
+  flex: 90%;
+}
+
+.task-edit {
+  padding: 8px;
+  flex: 5%;
+}
+
+.task-delete {
+  padding: 8px;
+  flex: 5%;
+}

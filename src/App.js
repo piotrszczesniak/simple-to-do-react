@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import './App.scss';
 import { InputForm } from './Components/InputForm';
 import { Tasks } from './Components/Tasks';
 import { TaskContext } from './Contexts/TaskContext';
@@ -83,10 +83,9 @@ function App() {
       }}
     >
       <div className='App'>
-        <h1>todo list</h1>
+        <h2>quick todo list</h2>
         <InputForm />
-
-        <Tasks />
+        {taskList?.length === 0 ? 'Pretty empty here, add your tasks!' : <Tasks />}
       </div>
     </TaskContext.Provider>
   );
